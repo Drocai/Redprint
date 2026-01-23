@@ -25,7 +25,7 @@ jobs:
       - name: Check file validity
         run: |
           echo "Validating V1 is an HTML file..."
-          if file V1 | grep -q "HTML"; then
+          if grep -q "<!DOCTYPE html>" V1; then
             echo "✓ V1 is a valid HTML file"
           else
             echo "✗ V1 is not an HTML file"
